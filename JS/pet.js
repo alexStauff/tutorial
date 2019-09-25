@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
 
-<style>
+function startScreen(){
+    document.getElementById("screenSaverBackground").click();
+    console.log("Button Clicked...");
+}
 
-</style>
+function onStart(){
+    document.getElementById('startButton').onclick = function(){
+         
+    }
+}
 
-<title>Animate</title>
-</head>
-<body>
-    <canvas id="myCanvas" width = "852" height="480" style="background: url('11.jpg')"></canvas>
-    
-</body>
-<script>
-
+    //init canvas and image, also sets basic dim at rest alien
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     var myimage = new Image()
@@ -32,6 +28,8 @@
     var counterR = 0;
     var counterL = 0;
 
+
+    //handlers
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
 
@@ -57,21 +55,23 @@
             leftPressed = false;
         }
     }
+
+    //draws the alien
     function drawAlien()
     {
         ctx.beginPath();
         ctx.drawImage(myimage, alienX, (canvas.height-alienHeight) /1.25, alienWidth, alienHeight);
-        //ctx.drawImage(myimage, alienX, alienHeight);
-        //ctx.(alienX, (canvas.height-alienHeight) / 1.25, alienWidth, alienHeight);
-        //ctx.rect(alienX, canvas.height-alienHeight, alienWidth, alienHeight);
-        //ctx.fillStyle = "#0095DD";
-        //ctx.fill();
         ctx.closePath();
     }
+
+    //draws the alien to the canvas
     function draw()
     {
         ctx.clearRect(0,0,canvas.width, canvas.height);
         drawAlien();
+
+        //sets the aliens position to X + 2
+        //cycles walk animation
         if(rightPressed)
         {
             alienX += 2;
@@ -99,6 +99,9 @@
                 alienX = canvas.width - alienWidth;
             }
         }
+
+        //sets the aliens position to X - 2
+        //cycles walk animation
         else if(leftPressed)
         {
             alienX -= 2;
@@ -126,6 +129,8 @@
                 alienX = 0;
             }
         }
+
+        //Idle
         else
         {
             myimage.src="alien.png";
@@ -135,7 +140,3 @@
         x += dx;
     }
     setInterval(draw, 10)
-
-
-</script>
-</html>

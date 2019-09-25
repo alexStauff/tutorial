@@ -1,0 +1,23 @@
+
+
+h1{
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgb(25, 88, 88);
+    background: rgb(25, 88, 88);
+    border-radius: 5px;
+    border: 2px solid green;
+}
+
+#startButton{
+    text-align: center;
+    height: 120;
+    position: absolute;
+    top: 50%;
+    left: 46%;
+    border: 2px solid green;
+    border-radius: 3px solid; 
+    background-color: rgb(25, 88, 88);
+    background: rgb(25, 88, 88);
+    transform: scale(1.3);
+}

@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-
-<style>
-
-</style>
-
-<title>Animate</title>
-</head>
-<body>
-    <canvas id="myCanvas" width = "852" height="480" style="background: url('11.jpg')"></canvas>
-    
-</body>
-<script>
-
-    var canvas = document.getElementById("myCanvas");
+var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     var myimage = new Image()
     myimage.src = "alien.png";
@@ -136,6 +119,3 @@
     }
     setInterval(draw, 10)
 
-
-</script>
-</html>
